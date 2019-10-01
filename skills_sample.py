@@ -1,19 +1,5 @@
-# Emsi Open Skills
-A python library for accessing Emsi's open skills library. For more info on the library, you can go here: https://skills.emsidata.com/
-Emsi has open-sourced their skills classification, but it comes with its own terms of use, which you can find here: https://skills.emsidata.com/emsi-open-skills-license-agreement.pdf
-
-# Usage
-All of the scripts have been tested with python 3.7.3
-Libraries were installed using [pip](https://pypi.org/project/pip/) and are available in the `requirements.txt` file. You can install them by running `pip install -r requirements.txt`
-
-## Documentation
-API connection class is available in the `emsi_connection.py` script. It provides automatic handling of generating an Oauth 2.0 token from Emsi's Auth server, as well as ensuring the access token is valid.
-A script in `download_skills.py` has also been provided, which downloads the latest list of skills from Emsi's API.
-
-Here's an example of how to use the Emsi connection library in this repo (also available in `skills_sample.py`:
-```python
-# import the connection class
 from emsi_connection import SkillsClassificationConnection
+
 
 # make sure that you input your credentials.
 # you can request credentials on the skills site here: https://skills.emsidata.com/access
@@ -47,7 +33,7 @@ print(skills_conn.get_skill_by_id(search_response.json()['skills'][0]['id']).tex
 # get a list of the different skill types available
 print(skills_conn.list_skill_types().text)
 
-# here's some text of a sample job posting that Emsi uses on their open skills site
+# here's some text of a sample job posting that Emsi uses on it's open skills site
 job_posting_text = """
     Full Stack Web Developer
     Emsi is a trusted advisor on labor market information for customers across a wide array of markets. We build SaaS products that combine many different kinds of workforce data to accurately inform our clients' decisions about college course offerings, hiring, site selection, economic development, and much more. We need an experienced developer to join us in producing premier software tools for understanding labor market data.
@@ -82,4 +68,3 @@ print(skills_conn.extract_skills(job_posting_text).text)
 
 # in the skills tagging, include the source for why this text gets tagged
 print(skills_conn.extract_skills_with_source(job_posting_text).text)
-```
