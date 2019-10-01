@@ -1,16 +1,19 @@
 # Emsi Open Skills
 A python library for accessing Emsi's open skills library. For more info on the library, you can go here: https://skills.emsidata.com/
+
 Emsi has open-sourced their skills classification, but it comes with its own terms of use, which you can find here: https://skills.emsidata.com/emsi-open-skills-license-agreement.pdf
 
 # Usage
 All of the scripts have been tested with python 3.7.3
+
 Libraries were installed using [pip](https://pypi.org/project/pip/) and are available in the `requirements.txt` file. You can install them by running `pip install -r requirements.txt`
 
 ## Documentation
 API connection class is available in the `emsi_connection.py` script. It provides automatic handling of generating an Oauth 2.0 token from Emsi's Auth server, as well as ensuring the access token is valid.
+
 A script in `download_skills.py` has also been provided, which downloads the latest list of skills from Emsi's API.
 
-Here's an example of how to use the Emsi connection library in this repo (also available in `skills_sample.py`:
+Here's an example of how to use the Emsi connection library in this repo (also available in `skills_sample.py`):
 ```python
 # import the connection class
 from emsi_connection import SkillsClassificationConnection
