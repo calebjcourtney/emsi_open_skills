@@ -91,7 +91,9 @@ class SkillsClassificationConnection(object):
         return response
 
     def list_versions(self):
-        """Get the versions available in the API
+        """
+        A list of available skill classification versions. See our Skills Classification Changelog for the updates in each version.
+        Version latest can be used as an alias to the latest skill version.
 
         Returns:
             response: requests type response from the API
@@ -102,7 +104,8 @@ class SkillsClassificationConnection(object):
         return response
 
     def list_all_skills(self, version = 'latest'):
-        """Get the full list of skills in the API
+        """
+        Returns a list of all skills in {version} sorted by skill name.
 
         Args:
             version (str, optional): Defaults to 'latest', which tells the API to use the latest version available
@@ -116,7 +119,9 @@ class SkillsClassificationConnection(object):
         return response
 
     def search_skills(self, search_string = None, type_id = None, version = 'latest'):
-        """Search for skills based on a search string or the type of skill (e.g. hard skill, soft skill, certification)
+        """
+        Search for skills by name using the q query parameter. All special characters must be URL encoded, eg. "C++ Progr" should be encoded "C%2B%2B%20Progr".
+        Can be combined with the typeId parameter to limit search results by type.
 
         Args:
             search_string (str, optional): the string to use when searching for a skill by name
@@ -140,7 +145,9 @@ class SkillsClassificationConnection(object):
         return response
 
     def get_skill_by_id(self, skill_id, version = 'latest'):
-        """Get the information for a particular skill based solely on its id
+        """
+        Returns information about a specific skill where {id} is the skills id, and where {version} is the version of the classifier.
+        If a skill that has been removed is requested, it will return with an extra field removedDescription and will be of type Remove.
 
         Args:
             skill_id (str): Description
@@ -155,7 +162,9 @@ class SkillsClassificationConnection(object):
         return response
 
     def list_skill_types(self, version = 'latest'):
-        """Get a list of the types of skills available (hard skills, soft skills, certifications) as well as the skill type ids
+        """
+        Returns a list of skill types along with their description and typeId.
+        typeId query strings can be used with any of the /versions/{version}/skills routes to filter results.
 
         Args:
             version (str, optional): Defaults to 'latest', which tells the API to use the latest version available
@@ -170,7 +179,6 @@ class SkillsClassificationConnection(object):
 
     def extract_skills(self, search_string, version = 'latest'):
         """Returns a list of skills found in a document. Document must be UTF-8 encoded.
-
         Note that this endpoint has a free tier monthly quota of 50 requests. Contact us if you'd like this increased or made unlimited. Responses from this endpoint will include two headers, X-Rate-Limit-Remaining and X-Rate-Limit-Reset, which indicate how many requests you have remaining in your current quota period and when that quota will reset, respectively.
 
         Args:
@@ -191,7 +199,6 @@ class SkillsClassificationConnection(object):
         Returns a list of skills found in a document. Document must be UTF-8 encoded.
         Returns additional trace information which exposes indices into the source document where skill related words were found.
         Indices are byte offsets indicating where each word was found in the document.
-
         Note that this endpoint has a free tier monthly quota of 50 requests. Contact us if you'd like this increased or made unlimited. Responses from this endpoint will include two headers, X-Rate-Limit-Remaining and X-Rate-Limit-Reset, which indicate how many requests you have remaining in your current quota period and when that quota will reset, respectively.
 
         Args:
