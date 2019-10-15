@@ -1,5 +1,5 @@
 # Emsi Open Skills
-A python library for accessing Emsi's open skills library. For more info on the library, you can go here: https://skills.emsidata.com/
+A python library for accessing Emsi's open skills library. Read here for more info on the open skills library: https://skills.emsidata.com/
 
 Emsi has open-sourced their skills classification, but it comes with its own terms of use, which you can find here: https://skills.emsidata.com/emsi-open-skills-license-agreement.pdf
 
