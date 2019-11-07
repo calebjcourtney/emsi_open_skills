@@ -3,6 +3,8 @@ A python library for accessing Emsi's open skills library. Read here for more in
 
 Emsi has open-sourced their skills classification, but it comes with its own terms of use, which you can find here: https://skills.emsidata.com/emsi-open-skills-license-agreement.pdf
 
+Please note that this is an unofficial repository and not maintained by Emsi. It is provided as-is.
+
 # Usage
 All of the scripts have been tested with python 3.7.3
 
