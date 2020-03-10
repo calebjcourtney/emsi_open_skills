@@ -1,3 +1,6 @@
+# No Longer Maintained
+This library is no longer maintained and has been moved to a more comprehensive [python library here](https://github.com/calebjcourtney/EmsiApiPy)
+
 # Emsi Open Skills
 A python library for accessing Emsi's open skills library. Read here for more info on the open skills library: https://skills.emsidata.com/
 
